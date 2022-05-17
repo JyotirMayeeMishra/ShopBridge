@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.cdk-overlay-container {
+    height: 300px;
+    position: absolute;
+    top: 30%;
+    left: 32%;
+    width: 40%;
+    z-index: 9999;
+    background: lightgrey;
+    border-radius: 20px;
+}

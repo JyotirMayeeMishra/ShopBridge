@@ -1,0 +1,23 @@
+<!-- <p>view-product works!</p> -->
+<section class="">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img class="card-img-top" src="{{productData.productImg}}" alt="">
+            </div>
+            <div class="col-md-6">
+                <h1>{{productData.productName}}</h1>
+                <div class="fs-5 mb-5">
+                    <span>$ {{productData.price}}</span>
+                   
+                </div>
+                <p class="lead">{{productData.descriptions}}</p>
+                 <!-- <div class="card-footer p-4 pt-0 border-top-0 bg-transparent"> -->
+                        <div class="btn-display"><a class="btn btn-outline-dark mt-auto" href="products/update-product/{{productData.id}}">Update Product</a></div>
+                        <div class="btn-display"><a class="btn btn-outline-dark mt-auto" href="products/delete-product/{{productData.id}}">Delete Product</a></div>
+                    <!-- </div> -->
+               
+            </div>
+        </div>
+    </div>
+</section>

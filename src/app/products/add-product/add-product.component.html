@@ -1,0 +1,94 @@
+<h2 class="bg-light mb-2 text-center">Add New Product</h2>
+
+<form [formGroup]="addProductForm">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Product Name</label>
+            <input class="form-control" type="text" formControlName="productName">
+            <span class="text-danger"
+                *ngIf="addProductForm.get('productName').hasError('required') && addProductForm.get('productName').touched">Product
+                Name is required</span>
+            <span class="text-danger"
+                *ngIf="addProductForm.get('productName').hasError('pattern') && addProductForm.get('productName').touched">Please
+                enter a valid product name.</span>
+
+        </div>
+        <div class="col-md-6">
+            <label for="validationServer02" class="form-label">Category Id</label>
+            <input class="form-control" type="text" formControlName="categoryId">
+            <span class="text-danger"
+                *ngIf="addProductForm.get('categoryId').hasError('required') && addProductForm.get('categoryId').touched">Category
+                Id is required</span>
+            <span class="text-danger"
+                *ngIf="addProductForm.get('categoryId').hasError('pattern') && addProductForm.get('categoryId').touched">Please
+                choose - 1 for Electronics, 2 for Men's Clothing, 3 for Women's Clothing, 4 for Home & Furniture</span>
+        </div>
+    </div>
+    <app-file-upload (imagePath)="imgPath($event)"></app-file-upload>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" type="text" formControlName="description">
+           </textarea>
+            <span class="text-danger"
+                *ngIf="addProductForm.get('description').hasError('required') && addProductForm.get('description').touched">Product
+                Description is required</span>
+            <span class="text-danger"
+                *ngIf="addProductForm.get('description').hasError('minLength') && addProductForm.get('description').touched">Please
+                enter a valid description</span>
+        </div>
+        <div class="col-md-6">
+            <label>Rating</label>
+            <select class="custom-select" formControlName="rating">
+                <option value="">Choose</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Product Color</label>
+            <input class="form-control" type="text" formControlName="color">
+
+        </div>
+        <div class="col-md-6">
+            <label>Is Available</label>
+            <select class="custom-select" formControlName="isAvailable">
+                <option selected value="">Choose</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+
+            </select>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label">Product Price</label>
+            <input class="form-control" type="text" formControlName="price">
+            <span class="text-danger"
+                *ngIf="addProductForm.get('price').hasError('required') && addProductForm.get('price').touched">Price is
+                required</span>
+            <span class="text-danger"
+                *ngIf="addProductForm.get('price').hasError('pattern') && addProductForm.get('price').touched">Please
+                enter a valid price.</span>
+        </div>
+      
+
+
+    </div>
+    <span class="text-danger text-center" *ngIf="erroMsg">Please choose a product image.</span>
+    <div class="col-12 text-center">
+        <button class="btn btn-secondary" (click)="addNewProduct(addProductForm)" [disabled]="!addProductForm.valid">Add
+            Product</button>
+    </div>
+    <!-- <button (click)="setValue()">Submit</button> -->
+
+</form>

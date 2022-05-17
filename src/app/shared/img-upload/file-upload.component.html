@@ -1,0 +1,30 @@
+<div class="text-center">
+	<div class="row">
+		<div class="col-6">
+			<input class="form-control" type="file"
+			(change)="showPreviewImage($event)">
+		</div>
+		<div class="col-6">
+			<img [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder">
+		</div>
+	</div>
+	
+			
+
+	<!-- <button (click)="onUpload()"
+		class="btn btn-success">
+		Upload
+	</button> -->
+</div>
+
+<!-- Shareable short link of uoloaded file -->
+<div class="container text-center jumbotron"
+	*ngIf="shortLink">
+	<h2> Visit Here</h2>
+	<a href="{{shortLink}}">{{shortLink}}</a>
+</div>
+
+<!--Flag variable is used here-->
+<!-- <div class="container" *ngIf="loading">
+	<h3>Loading ...</h3>
+</div> -->

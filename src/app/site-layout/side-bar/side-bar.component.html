@@ -1,0 +1,9 @@
+<a routerLink ="products" class="list-group-item "  >View All Products</a>
+
+<a routerLink ="products/add-product" class="list-group-item " >Add New Product</a>
+<div class="border-end bg-white" id="sidebar-wrapper">
+    <!-- <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div> -->
+    <div class="list-group" *ngFor="let cat of categoryList">
+        <a routerLink ="products/category/{{cat.id}}" class="list-group-item " >{{cat.categoryName}}</a>
+    </div>
+</div>
