@@ -6,6 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Mock Json Server
+ Step1 - Installation of Json Server - npm install -g json-server
+ Step2 - Run --->  cd shopBridge\src\assets\data 
+ Step3 - Start JSON Server - json-server --watch db.json
+Navigate to `http://localhost:3000/`.
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
